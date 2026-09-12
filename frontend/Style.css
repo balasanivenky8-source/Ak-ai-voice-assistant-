@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #05070d;
+  color: #e8faff;
+  font-family: Arial, sans-serif;
+}
+
+.jarvis {
+  width: min(1000px, 94%);
+  margin: auto;
+  padding: 30px 0;
+}
+
+header {
+  text-align: center;
+}
+
+header h1 {
+  letter-spacing: 12px;
+  margin-bottom: 5px;
+}
+
+#status {
+  opacity: .7;
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+.core {
+  min-height: 430px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#orb {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  border: 2px solid #5ee7ff;
+  display: grid;
+  place-items: center;
+  animation: pulse 2s infinite;
+}
+
+.ring {
+  width: 170px;
+  height: 170px;
+  border-radius: 50%;
+  border: 2px dashed #5ee7ff;
+  animation: rotate 8s linear infinite;
+}
+
+.core-dot {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #5ee7ff;
+  box-shadow:
+    0 0 30px #5ee7ff,
+    0 0 80px #5ee7ff;
+}
+
+#micButton {
+  margin-top: 35px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  border: 1px solid #5ee7ff;
+  background: transparent;
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.conversation {
+  max-width: 750px;
+  margin: auto;
+}
+
+#messages {
+  height: 300px;
+  overflow-y: auto;
+  padding: 15px;
+  border: 1px solid #24303a;
+}
+
+.message {
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+.user {
+  text-align: right;
+}
+
+.assistant {
+  text-align: left;
+}
+
+.input-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.input-row input {
+  flex: 1;
+  padding: 15px;
+  background: #0c1119;
+  border: 1px solid #273542;
+  color: white;
+}
+
+.input-row button {
+  padding: 15px 20px;
+  cursor: pointer;
+}
+
+@keyframes pulse {
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
