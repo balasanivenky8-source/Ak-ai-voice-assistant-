@@ -1,0 +1,49 @@
+User request
+     ↓
+Context manager
+     ↓
+Intent detection
+     ↓
+Safety / permission check
+     ↓
+Planner
+     ↓
+Tool selection
+     ↓
+Tool execution
+     ↓
+Result verification
+     ↓
+Response generation
+     ↓
+Memory update
+     ↓
+Voice response
+
+For example 
+export async function routeCommand(command) {
+
+  const text = command.toLowerCase();
+
+  if (text.includes("calculate")) {
+    return {
+      intent: "calculator",
+      tool: "calculator"
+    };
+  }
+
+  if (
+    text.includes("open google") ||
+    text.includes("open youtube")
+  ) {
+    return {
+      intent: "website",
+      tool: "openWebsite"
+    };
+  }
+
+  return {
+    intent: "conversation",
+    tool: "llm"
+  };
+}
