@@ -1,0 +1,26 @@
+export const tools = {
+
+  calculator: {
+    description: "Perform mathematical calculations",
+
+    execute: async ({ expression }) => {
+      // Use a safe math parser in production.
+      return {
+        result: expression
+      };
+    }
+  },
+
+  openWebsite: {
+    description: "Open an allowed website",
+
+    execute: async ({ url }) => {
+
+      return {
+        action: "open",
+        url
+      };
+    }
+  }
+
+};
